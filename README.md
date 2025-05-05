@@ -10,3 +10,4 @@ Features:
 - Manages the connections between sensors and coordinates info to make sure that info is clear and concise
 - Alerts can be sent to any number of personal devices
 
+By entering my number, I agree to receive SMS alerts from this system
