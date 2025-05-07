@@ -1,7 +1,7 @@
 from twilio.rest import Client     # Import Twilio REST client library
 
 account_sid = 'AC9807f1a9e1c43993ba857e0eca76a8b1'
-auth_token  = '64f8b665e15ee3af12e9fc938610dfed'
+auth_token  = 'foo' #I cant have my token on a public website, the actaul token is filled out on the Pi's copy of this file
 
 client = Client(account_sid, auth_token)
 # Instantiate the Twilio client with your Account SID and Auth Token
