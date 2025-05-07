@@ -3,6 +3,7 @@ import light_sensor           # Import our light-sensing module
 import motion_sensor          # Import our motion-sensing module
 import texter                 # Import our SMS/texting module
 import RPi.GPIO as GPIO       # Import GPIO for pin cleanup
+import file_writer            # Import file-writing module
 
 GPIO.setmode(GPIO.BCM)        # Use Broadcom (BCM) GPIO pin numbering
 CHECK_INTERVAL = 1            # Seconds between each sensor check
@@ -12,6 +13,7 @@ def main():
     try:
         light_sensor.setup_ldr()      # Prepare LDR GPIO pin
         motion_sensor.setup_pir()     # Prepare PIR GPIO pin
+        file_writer.setup()
 
         last_text_time = 0            # Timestamp of last SMS sent
         motion_monitoring = False     # Track whether PIR is actively monitored
@@ -27,8 +29,8 @@ def main():
                     print("Motion detected!")
                     now = time.time()                # Current timestamp
                     if now - last_text_time >= TEXT_INTERVAL:
-                        texter.send_text()           # Send SMS alert
-                        print("Alert sent!")
+                        file_writer.writeReport()         # Wrote to reports
+                        print("Alert written!")
                         last_text_time = now         # Update last-sent time
                     else:
                         print("Motion detected but text already sent recently.")
