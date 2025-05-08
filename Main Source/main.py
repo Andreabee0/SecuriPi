@@ -19,13 +19,13 @@ def main():
         motion_monitoring = False     # Track whether PIR is actively monitored
 
         while True:
-            if light_sensor.is_dark():   # If it’s dark according to LDR...
+            if light_sensor.is_dark():   # If it’s dark according to LDR
                 if not motion_monitoring:
                     print("It's getting dark, activating motion sensor:")
                     motion_monitoring = True
                     print("Monitoring motion...")
 
-                if motion_sensor.motion_detected():  # If PIR sees motion...
+                if motion_sensor.motion_detected():  # If PIR sees motion
                     print("Motion detected!")
                     now = time.time()                # Current timestamp
                     if now - last_text_time >= TEXT_INTERVAL:
@@ -37,7 +37,7 @@ def main():
                 else:
                     print("No motion.")               # No motion this cycle
 
-            else:                                  # If it’s light...
+            else:                                  # If it’s light
                 if motion_monitoring:
                     print("It's daytime again. Stopping motion monitoring.")
                     motion_monitoring = False
