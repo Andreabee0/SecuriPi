@@ -33,7 +33,7 @@ def main():
                         print("Alert written!")
                         last_text_time = now         # Update last-sent time
                     else:
-                        print("Motion detected but text already sent recently.")
+                        print("Motion Detected!")
                 else:
                     print("No motion.")               # No motion this cycle
 
