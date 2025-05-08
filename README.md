@@ -11,3 +11,5 @@ Features:
 - Alerts can be sent to any number of personal devices
 
 By entering my number, I agree to receive SMS alerts from this system
+
+Created by Ceser Olivas (cesar16@colostate.edu) and Andrea Bernardy (andreabe@colostate.edu)
