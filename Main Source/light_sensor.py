@@ -1,7 +1,7 @@
 import RPi.GPIO as GPIO       # Import Raspberry Pi GPIO library
 import time                   # Import time library for delays
 
-LDR_PIN = 27                  # BCM pin where LDR/resistor junction is wired
+LDR_PIN = 27                
 SAMPLES  = 20                 # Number of rapid samples for smoothing readings
 DELAY    = 0.01               # Seconds to wait between each rapid sample
 
