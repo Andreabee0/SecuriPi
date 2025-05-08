@@ -6,7 +6,7 @@ auth_token  = 'foo' #I cant have my token on a public website, the actaul token 
 client = Client(account_sid, auth_token)
 # Instantiate the Twilio client with your Account SID and Auth Token
 
-FROM_NUMBER = '+16085645045'      # Your Twilio phone number (sender)
+FROM_NUMBER = '+16085645045'      # Twilio phone number (sender)
 TO_NUMBER   = '+17205619733'      # Destination phone number (recipient)
 
 def send_text(body="Motion Detected!"):
