@@ -11,14 +11,14 @@ def setup_ldr():
 
 def read_raw():
     count = 0                      # Initialize count of HIGH readings
-    for _ in range(SAMPLES):      # Take SAMPLES fast readings...
-        count += GPIO.input(LDR_PIN)  # ...increment if pin is HIGH
+    for _ in range(SAMPLES):       # Take SAMPLES fast readings
+        count += GPIO.input(LDR_PIN)  # increment if pin is HIGH
         time.sleep(DELAY)             # brief pause between samples
     return 1 if count > SAMPLES//2 else 0
     # Return 1 (dark) if majority of samples were HIGH, else 0 (light)
 
 def is_dark():
-    val = read_raw()                # Get the smoothed raw reading
+    val = read_raw()                # Get the raw reading
     if val:                         # If val==1, it's dark
         print("Light check: dark")  # Debug output
         return True                 # Indicate dark
